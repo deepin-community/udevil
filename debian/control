@@ -1,15 +1,23 @@
-Source: template-repository
-Section: unknown
+Source: udevil
+Section: utils
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Mateusz Łukasik <mati75@linuxmint.pl>
+Build-Depends: debhelper-compat (= 13), libglib2.0-dev,
+ intltool, libudev-dev
+Standards-Version: 4.5.0
+Homepage: https://ignorantguru.github.com/udevil/
+Vcs-Git: https://github.com/mati75/udevil.git
+Vcs-Browser: https://github.com/mati75/udevil.git
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: udevil
+Architecture: linux-any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Recommends: udisks2
+Suggests: eject, cifs-utils, curlftpfs, sshfs
+Conflicts: devmon
+Provides: devmon
+Description: Alternative storage media interface
+ udevil mounts and unmounts removable devices and network shares
+ without requiring a password (set suid), shows device information
+ and monitors device changes. It includes the devmon automounting
+ script.

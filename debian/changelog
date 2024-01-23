@@ -1,5 +1,80 @@
-template-repository (1.0-1) unstable; urgency=medium
+udevil (0.4.4-3) unstable; urgency=medium
 
-  * Initial release
+  [ Debian Janitor ]
+  * Trim trailing whitespace.
+  * Use secure copyright file specification URI.
+  * debian/copyright: use spaces rather than tabs to start continuation
+    lines.
+  * Depend on newer debhelper (>= 9.20160709) rather than dh-systemd.
+    (Closes: #958609)
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+  * Drop unnecessary dh arguments: --with=systemd
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+  [ Mateusz Łukasik ]
+  * Bump dh version to 13 and drop compat file.
+  * Bump Standards-Version to 4.5.0. (no changes needed)
+
+ -- Mateusz Łukasik <mati75@linuxmint.pl>  Sun, 01 Nov 2020 20:28:30 +0100
+
+udevil (0.4.4-2) unstable; urgency=medium
+
+  * Fix manpage. (Closes: #840842 LP: #1614419)
+  * debian/control:
+    + Clean Recommends field. (Closes: #869143)
+    + Bump dh version to 10.
+    + Use secured links.
+    + Bump Standards-Version to 4.0.0. (no changes needed)
+  * Add cherry picks from upstream:
+    + add --always-exec option for exec during startup/--mount-all.
+    + fix misspelling privileges.
+    + Fix "implicit declaration of function stat".
+    + fix cannot mount iso file within iso file.
+    + update lang pt_BR fr ru sv de it pl es.
+    + Added ability to run under a user's systemd session.
+  * debian/patches:
+    + Drop fix-spelling-error.patch match more changes included in cherry pick.
+    + Add raspberrypi_config.patch -- Merge Raspberry Pi config changes.
+    They are more specific for Debian.
+  * Update debian/copyright.
+  * debian/rules:
+    + Enable hardening.
+    + Install devmon@.service in correct place. (Closes: #799745)
+
+ -- Mateusz Łukasik <mati75@linuxmint.pl>  Sun, 23 Jul 2017 19:36:24 +0200
+
+udevil (0.4.4-1) unstable; urgency=medium
+
+  * New upstream release. (Closes: #778831, #744925, #750509)
+  * Fix systemd devmon@.service template unit file being shipped
+    in the wrong directory: (Closes: #782875)
+    + debian/rules: Add run dh-systemd.
+    + debian/control: Add dh-systemd to Build-Depends.
+  * debian/control:
+    + Bump Standards-Version to 3.9.6. (no changes needed)
+    + Remove udisks from Recommends -- no longer supported.
+  * Drop debian/source/options -- no longer needed.
+  * debian/rules: Remove no needed lines.
+  * Convert debian/udevil.1 and debian/devmon.1 to UTF-8. (Closes: #740076)
+  * Update debian/watch.
+  * Add debian/patches/fix-spelling-error.patch for like the patch name says.
+  * Add debian/patches/device-info-sys-stat.patch to fix FTBFS with gcc-5.
+    (Closes: #790630)
+
+ -- Mateusz Łukasik <mati75@linuxmint.pl>  Wed, 15 Jul 2015 18:34:16 +0200
+
+udevil (0.4.3-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Update debian/copyright.
+  * debian/control:
+    + build only on Linux.
+  * Update manpage file: debian/udevil.1.
+
+ -- Mateusz Łukasik <mati75@linuxmint.pl>  Sat, 01 Feb 2014 10:30:34 +0100
+
+udevil (0.4.1-1) unstable; urgency=low
+
+  * Initial release. (Closes: #691812)
+
+ -- Mateusz Łukasik <mati75@linuxmint.pl>  Mon, 13 Jan 2014 14:22:05 +0100
