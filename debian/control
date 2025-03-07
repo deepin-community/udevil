@@ -4,7 +4,8 @@ Priority: optional
 Maintainer: Mateusz Łukasik <mati75@linuxmint.pl>
 Build-Depends: debhelper-compat (= 13), libglib2.0-dev,
  intltool, libudev-dev
-Standards-Version: 4.5.0
+Rules-Requires-Root: binary-targets
+Standards-Version: 4.7.0
 Homepage: https://ignorantguru.github.com/udevil/
 Vcs-Git: https://github.com/mati75/udevil.git
 Vcs-Browser: https://github.com/mati75/udevil.git
